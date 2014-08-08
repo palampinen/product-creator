@@ -1,0 +1,126 @@
+	
+<!-- TEMPLATE FOR LISTING PRODUCTS -->
+
+
+<a href="#" class="btn btn-link" ng-click="back()" ><i class="glyphicon glyphicon-chevron-left"></i> Takaisin</a>
+
+<button class="btn btn-success" ng-csv="getArray" lazy-load="true" filename="{{ filename }}-magento.csv" field-separator="," >
+	<i class="glyphicon glyphicon-download-alt"></i> Lataa Tuotteet CSV tiedostona
+</button>
+
+<!--
+<button class="btn btn-primary" ng-csv="getArray" lazy-load="true" filename="{{ filename }}-lemon.csv" field-separator=";" >
+	<i class="glyphicon glyphicon-download-alt"></i> Vie CSV Lemoniin
+</button>
+		 
+<button class="btn btn-secondary" ng-click="getProducts()">Hae tuotteet</button>
+-->			 
+	
+
+<!-- Pikalisäys-->
+<h1 class="page-header">Pikalisäys</h1>
+
+<div class="row pikalisays">
+            <div class="col-xs-6 col-sm-3 lisays">
+				<a href="#/new/luistin">
+					<img src="img/luistin.png" class="img-responsive" alt="Luistimen pikalisäys">
+					<span class="h4">Luistin</span>
+					<span class="text-muted">Lisää luistin</span>
+				</a>
+            </div>
+            <div class="col-xs-6 col-sm-3 lisays">
+				<a href="#/new/maila">
+					<img src="img/maila.png" class="img-responsive" alt="Mailan pikalisäys">
+					<span class="h4">Maila</span>
+					<span class="text-muted">Lisää maila</span>
+				</a>
+            </div>
+            <div class="col-xs-6 col-sm-3 lisays">
+				<a href="#/new/kypärä">
+					<img src="img/kypara.png" class="img-responsive" alt="Kypärän pikalisäys">
+					<span class="h4">Kypärä</span>
+					<span class="text-muted">Lisää kypärä</span>
+				</a>
+            </div>
+            <div class="col-xs-6 col-sm-3 lisays">
+				<a href="#/new/suoja">
+					<img src="img/varuste.png" class="img-responsive" alt="Varusteen pikalisäys">
+					<span class="h4">Varuste</span>
+					<span class="text-muted">Lisää varuste</span>
+				</a>
+            </div>
+			
+</div>
+
+<!-- Suodatus --> 
+<div class="btn-group pull-right">
+	<button type="button" class="btn btn-default">Suodata</button>
+	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		<span class="caret"></span>
+		<span class="sr-only">Toggle Dropdown</span>
+	</button>
+	<ul class="dropdown-menu" role="menu">
+		<li><a href="#" class="btn btn-warning">Tämä ei vielä toimi</a></li>
+		<li><a href="#">Luistimet</a></li>
+		<li><a href="#">Mailat</a></li>
+		<li><a href="#">Kypärät</a></li>
+		<li><a href="#">Varusteet</a></li>
+		<li><a href="#">Muut</a></li>
+		<li class="divider"></li>
+		<li><a href="#">Kaikki</a></li>
+	</ul>
+</div>
+
+<!-- Lisätyt tuotteet --> 
+<h2 class="sub-header">Lisätyt tuotteet</h2>
+<div class="table-responsive">
+	<form class="form-horizontal" role="form">
+	  <div class="form-group has-feedback">		
+		<div class="col-sm-4">
+		  <input type="text" ng-model="search" class="search-query col-lg-3 form-control" placeholder="Hae">
+		  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+		</div>
+	  </div>
+	</form>
+	<div class="clearfix"></div>
+
+	<table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Kuva</th>
+        <th>#</th>
+        <th>Nimi</th>
+        <th>Kuvaus</th>
+        <th>Koko</th>
+        <th>Hinta €</th>
+        <th>Kunto</th>
+        <th>Kategoria</th>
+        <th>Lisäyspvm</th>
+        <th><a href="#/new" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Lisää</a></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="product in products | orderByPriority | filter:search | orderBy:'timestamp':true">
+        <td class="imgcell"><img  src="{{product.img1}}" ng-show="product.img1" alt="" /></td>
+        <td>{{product.sku}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.size}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.condition}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.date}}</td>
+        <td>
+          <a class="btn btn-default" href="#/edit/{{product.$id}}" title="Muokkaa" ><i class="glyphicon glyphicon-pencil"></i></a>
+          <a class="btn btn-info" href="#/copy/{{product.$id}}" title="Kopioi uudeksi tuotteeksi" ><i class="glyphicon glyphicon-share-alt"></i></a>  
+		  <a class="btn btn-warning" href="" ng-click="showDelete=!showDelete" title="Poista tuote" ><i class="glyphicon glyphicon-remove"></i></a>
+		  <a class="btn btn-success" href="" ng-show="showDelete" ng-click="remove(product.$id)" title="Poista tuote" ><i class="glyphicon glyphicon-ok"></i> Poista</a>
+		
+		  
+		  </div>
+		</td>
+      </tr>
+      </tbody>
+    </table>
+</div>
+		 

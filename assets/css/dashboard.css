@@ -1,0 +1,156 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+
+
+/*
+ * Global add-ons
+ */
+body, input, select, h1, h2, h3, h4, h5, h6, p,a {
+	font-family:'Lato', Helvetica, "Helvetica Neue", "trebuchet ms",Arial,verdana,sans-serif;
+}
+
+h1,h2,h3 {font-weight:300;}
+.btn {font-weight:900; text-transform:uppercase; letter-spacing:0.3px; border-radius:0; -webkit-border-radius:0;}
+
+
+
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+
+/* Navbar */
+.navbar .userimg { display:block; float:left; background:#000;  width:30px; height:30px; line-height:40px; font-size:25px; overflow:hidden; border-radius:100%; -webkit-border-radius:100%; text-align:center;margin:-5px 5px 0 0;}
+
+
+.loader {display:block;width:48px; height:48px; background:url(../img/loader.gif) no-repeat 50% 50%; margin:5% auto;}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a {
+  color: #fff;
+  background-color: #428bca;
+}
+
+/* Img */
+
+#img-cart {margin:20px auto;}
+#img-cart:after {content:""; clear:both;display:block;}
+#img-cart span.img-col{float:left; cursor:pointer; border:5px solid rgba(0,0,0,.05);width:110px; height:110px;margin:5px;text-align:center; display:block; border-radius:50%; -webkit-border-radius:50%;background:#EEE; position:relative; overflow:hidden; }
+#img-cart span.img-col:hover {border-color:rgba(0,0,0,0.15);}
+#img-cart span img{display:block; }
+#img-cart img.landscape {height:100%;}
+#img-cart img.portrait {width:100%;}
+
+.img-drop {float:left; margin:0 20px 20px 0; position:relative; width:200px; height:200px;border:1px solid rgba(255,255,255,.7);background:#428bca;color:#FFF; text-align:center;display:table-cell; vertical-align:middle;}
+.img-drop .img-input{position:absolute;width:100%;height:100%;z-index:2;left:0; opacity:0; top:0; }
+.img-drop .img-empty{line-height:200px; font-size:50px; color:#FFF;position:relative; z-index:1;}
+.img-drop .img-show{width:100%;  position:relative;z-index:1;}
+.img-drop .btn{ position:absolute; top:0;right:0; opacity:0.6; z-index:3;}
+.img-drop .btn:hover{ opacity:1; }
+
+.table-responsive  .table .imgcell {padding:0;}
+.imgcell img{max-height:50px;}
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Pikalisäys
+ */
+
+.pikalisays {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.pikalisays .h4 {
+  margin-bottom: 0;
+}
+.lisays {
+  margin-bottom: 20px;
+  position:relative;
+}
+.lisays .h4 {display:block;}
+.lisays img {
+  display: inline-block;
+  background:#eee;
+  border-radius:100%;
+  -webkit-border-radius:100%;
+  max-width:150px;
+  position:relative;
+}
+.lisays a {display:block;  outline:0;  }
+.lisays a:hover {text-decoration:none;}
+.lisays a:after {display:none;opacity:0;-webkit-transition:all 0.2s; content:'+'; color:#FFF; color:rgba(244,244,244,0.65); font-size:80px; text-align:center; font-weight:900; line-height:150px; width:150px; height:150px; left:50%; margin-left:-75px;position:absolute;top:0; background:#CCC; background:rgba(0,0,0,.2); border-radius:50%;-webkit-border-radius:50%;}
+.lisays a:hover:after {display:block; opacity:1;}
+
+
+/* Set - Lisäyskerrat */
+.setbuttons {margin:5px 0;}
+
+
+/* Footer */
+.sidefooter {position:relative;top:30px;font-size:80%;color:#888;opacity:0.3;transition:all 0.2s; -webkit-transition:all 0.2s;}
+.sidefooter:hover{opacity:1;}
+.sidefooter hr {margin:10px auto;}
+.tech {display:table;}
+.tech a {max-width:90px; display:table-cell;text-align:center; vertical-align:middle;padding:0px 20px 10px 0;}
+.tech a img {max-width:100%; padding:0 5px;}

@@ -1,0 +1,113 @@
+
+<h1 class="page-header">Uusi tuote</h1>
+
+<form name="myForm" role="form">
+      
+	<div class="form-group clearfix">
+		<div class="img-drop">
+			<input type="text" name="name" ng-model="product.img1"  class="img-input">
+			<img ng-show="product.img1" ng-src="{{product.img1}}" alt="Kuva 1" class="img-show" />
+			<i ng-show="!product.img1" class="glyphicon glyphicon-camera img-empty"></i>
+			<button title="Poista kuva" ng-show="product.img1" ng-click="product.img1 = ''" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+		</div>
+		
+		<div class="img-drop">
+			<input type="text" name="name" ng-model="product.img2"  class="img-input">
+			<img ng-show="product.img2" ng-src="{{product.img2}}" alt="Kuva 2" class="img-show" />
+			<i ng-show="!product.img2" class="glyphicon glyphicon-camera img-empty"></i>
+			<button title="Poista kuva" ng-show="product.img2" ng-click="product.img2 = ''" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+		</div>
+		
+		<div class="img-drop">
+			<input type="text" name="name" ng-model="product.img3"  class="img-input">
+			<img ng-show="product.img3" ng-src="{{product.img3}}" alt="Kuva 3" class="img-show" />
+			<i ng-show="!product.img3" class="glyphicon glyphicon-camera img-empty"></i>
+			<button title="Poista kuva" ng-show="product.img3" ng-click="product.img3 = ''" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+			</div>
+	</div>
+	
+	<div class="form-group" ng-class="{error: myForm.category.$invalid && !myForm.category.$pristine}">
+		<label>Kategoria</label>
+		<select class="form-control" name="category" ng-model="product.category" required >
+		  <option value="">Valitse</option>
+		  <option value="luistin">Luistin</option>
+		  <option value="maila">Maila</option>
+		  <option value="kypärä">Kypärä</option>
+		  <option value="suoja">Suoja</option>
+		  <option value="dvd">DVD</option>
+		</select>
+	</div>	  
+	  
+	  
+	<div class="form-group" ng-class="{error: myForm.name.$invalid && !myForm.name.$pristine}">
+        <label>Nimi</label>
+        <input type="text" name="name" ng-model="product.name" required class="form-control">
+        <span ng-show="myForm.name.$error.required && !myForm.name.$pristine" class="help-inline">
+            Required {{myForm.name.$pristine}}</span>
+    </div>
+	  
+	<label>Tuotteen kuvaus</label>
+    <textarea name="description" ng-model="product.description" class="form-control"></textarea>
+    
+    <div class="form-group" ng-class="{error: myForm.size.$invalid && !myForm.size.$pristine}">
+        <label>Koko</label>
+        <input type="text" name="size" ng-model="product.size" required class="form-control">
+    </div>
+	  
+	  
+	<div class="form-group" ng-class="{error: myForm.price.$invalid && !myForm.price.$pristine}">
+        <label>Hinta €</label>
+        <input type="number" name="price" ng-model="product.price" required class="form-control">
+    </div>
+	
+	
+	<label><i class="glyphicon glyphicon-star"></i> Kunto</label><br />
+	<div class="radio-group" >
+		<label class="radio-inline">
+		  <input type="radio" name="condition" ng-model="product.condition" id="condition" value="1"> 1
+		</label>
+		<label class="radio-inline ">
+		  <input type="radio" name="condition" ng-model="product.condition" id="condition" value="2"> 2
+		</label>
+		<label class="radio-inline">
+		  <input type="radio" name="condition"  ng-model="product.condition" id="condition" value="3"> 3
+		</label>
+		<label class="radio-inline">
+		  <input type="radio" name="condition" ng-model="product.condition" id="condition" value="4"> 4
+		</label>
+		<label class="radio-inline">
+		  <input type="radio" name="condition" ng-model="product.condition" id="condition" value="5"> 5
+		</label>
+	</div>
+	<br>
+	<br>
+	
+	  
+	<div class="form-group" ng-class="{error: myForm.sku.$invalid && !myForm.sku.$pristine}">
+        <label>SKU</label>
+        <input type="text" name="sku" ng-model="product.sku" required class="form-control">
+    </div>
+	 	  
+
+      <br>
+      <button ng-click="cancel()" class="btn btn-link">Peruuta</button>
+      <button ng-click="save()" ng-disabled="myForm.$invalid"
+              class="btn btn-primary">Tallenna</button>
+      <button ng-click="destroy()"
+              ng-show="product.$remove" class="btn btn-danger">Poista</button>
+</form>
+
+
+ 
+<!--
+		TÄMÄ ESIMERKKINÄ ERROR HELP MESSAGESTA
+	  <div class="control-group" ng-class="{error: myForm.site.$invalid && !myForm.site.$pristine}">
+        <label>Website</label>
+        <input type="url" name="site" ng-model="product.site" required>
+        <span ng-show="myForm.site.$error.required && !myForm.site.$pristine" class="help-inline">
+            Required</span>
+        <span ng-show="myForm.site.$error.url" class="help-inline">
+            Not a URL</span>
+      </div>
+-->
+    

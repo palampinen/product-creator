@@ -1,0 +1,14 @@
+<h1 class="page-header">Lisäyskerrat</h1>
+
+
+<a title="Kaikki tuotteet" class="btn btn-success" href="#/list/today"><i class="glyphicon glyphicon-plus"></i> Aloita lisääminen</a>
+<a title="Kaikki tuotteet" class="btn btn-default" href="" onclick="location.reload()">Lataa uudestaan</a>
+<a title="Kaikki tuotteet" class="btn btn-default" href="#/list/">Näytä kaikki tuotteet</a>
+<a title="Kaikki tuotteet" class="btn btn-default" href="" ng-click="reverse=!reverse" ><i class="glyphicon glyphicon-sort"></i> pvm</a>
+
+
+<span class="loader"></span>
+<div class="setbuttons" ng-repeat="set in sets | orderBy:'timestamp':reverse">
+	<a title="Muokkaa lisäyskertaa {{set.date}}" class="btn btn-primary btn-lg btn-block" href="#/list/day/{{set.date}}"><i class="glyphicon glyphicon-calendar"></i>{{set.date}} <span class="badge">{{set.count}}</span></a>
+</div>
+

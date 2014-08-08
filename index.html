@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="product">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Verkkokaupan tuotteiden luonti">
+    <meta name="author" content="Deeper">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+	
+    <title>Verkkokauppa × Tuotteet</title>
+	
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic,900,700' rel='stylesheet' type='text/css'>
+	
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/dashboard.css" rel="stylesheet">
+
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular-resource.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular-sanitize.min.js"></script>  
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+	<script src="//cdn.firebase.com/js/simple-login/1.5.0/firebase-simple-login.js"></script>
+	<script src="assets/js/ng-csv.min.js"></script>
+	<script src="assets/js/underscore-min.js"></script>
+	<script src="assets/js/tuotteet.js"></script>
+		
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><i class="glyphicon glyphicon-th-large"></i> VERKKOKAUPAN NIMI</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Tuotteet</a></li>
+            <li><a href="#">Asetukset</a></li>
+            <li><a href="#">Ohje</a></li>
+            <li><a class="user" href="#"><span class="userimg"><i class="glyphicon glyphicon-user"></i></span> Kauppias A </a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Etsi tuotetta...">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+			
+		
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Tuotteiden lisäys</a></li>
+			<!--
+            <li><a href="#">Edelliset tuoteet</a></li>
+            <li><a href="#">Historia</a></li>
+            <li><a href="#">Vie CSV</a></li>-->
+          </ul>
+		
+			<div id="img-cart">
+				
+			</div>
+			
+			
+			
+			
+			<div class="sidefooter">
+			
+			Made by <a href="http://deeper.fi">Deeper</a>
+			<hr >
+			<span class="tech">
+				<a title="Bootstrap" href="http://getbootstrap.com" target="_blank"><img src="assets/img/tech/bootstrap.png" alt="Bootstrap" style="height:30px;" /></a>
+				<a title="AngularJS" href="http://angularjs.org" target="_blank"><img src="assets/img/tech/angularjs.png" alt="AngularJS" /></a>
+				<a title="Firebase" href="http://firebase.com" target="_blank"><img src="assets/img/tech/firebase.png" alt="Firebase"   /></a>
+			</span>
+			</div>
+			
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<div ng-view></div>
+        </div>
+        </div>
+    </div>
+ 
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/docs.min.js"></script>
+  </body>
+</html>
