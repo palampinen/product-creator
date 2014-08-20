@@ -26,6 +26,9 @@
 			</div>
 	</div>
 	
+	<div class="row">
+		<div class="col-md-6">
+
 	<div class="form-group" ng-class="{error: myForm.category.$invalid && !myForm.category.$pristine}">
 		<label>Kategoria</label>
 		<select class="form-control" name="category" ng-model="product.category" required >
@@ -35,6 +38,7 @@
 		  <option value="kypärä">Kypärä</option>
 		  <option value="suoja">Suoja</option>
 		  <option value="dvd">DVD</option>
+		  <option value="default">Oletus</option>
 		</select>
 	</div>	  
 	  
@@ -49,11 +53,12 @@
 	<label>Tuotteen kuvaus</label>
     <textarea name="description" ng-model="product.description" class="form-control"></textarea>
     
+    <!-- 
     <div class="form-group" ng-class="{error: myForm.size.$invalid && !myForm.size.$pristine}">
         <label>Koko</label>
         <input type="text" name="size" ng-model="product.size" required class="form-control">
     </div>
-	  
+ 	-->	  
 	  
 	<div class="form-group" ng-class="{error: myForm.price.$invalid && !myForm.price.$pristine}">
         <label>Hinta €</label>
@@ -61,6 +66,7 @@
     </div>
 	
 	
+	<!--
 	<label><i class="glyphicon glyphicon-star"></i> Kunto</label><br />
 	<div class="radio-group" >
 		<label class="radio-inline">
@@ -81,15 +87,34 @@
 	</div>
 	<br>
 	<br>
-	
+	-->
 	  
 	<div class="form-group" ng-class="{error: myForm.sku.$invalid && !myForm.sku.$pristine}">
         <label>SKU</label>
         <input type="text" name="sku" ng-model="product.sku" required class="form-control">
     </div>
-	 	  
+	</div>
 
-      <br>
+
+	<div class="col-md-6">
+	<h3>Tuoteattribuutit</h3>
+
+
+	<div ng-repeat="customfield in customfields[product.category]">
+		<label>{{customfield.name}}</label><br />
+		<div class="radio-group customradio" >
+			<label class="radio-inline" ng-repeat="field in customfield.fields">
+			  <input type="radio" name="{{customfield.name}}" ng-model="product[customfield.name]" value="{{field}}"> {{field}}
+			</label>
+		</div>
+		<br />
+	</div>
+
+	</div>
+
+	</div>
+
+  
       <button ng-click="cancel()" class="btn btn-link">Peruuta</button>
       <button ng-click="save()" ng-disabled="myForm.$invalid"
               class="btn btn-primary">Tallenna</button>

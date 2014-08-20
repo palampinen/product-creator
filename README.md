@@ -1,6 +1,9 @@
 product-creator
 ===============
 
+![ScreenShot](https://raw.githubusercontent.com/thedpr/product-creator/master/img/screenshot/overview.png)
+
+
 Create Products for Magento
 
 

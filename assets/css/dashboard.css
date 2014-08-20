@@ -7,6 +7,8 @@ body {
   padding-top: 50px;
 }
 
+.pull-right{float: right;}
+.pull-left{float: left;}
 
 
 
@@ -94,6 +96,15 @@ h1,h2,h3 {font-weight:300;}
 .table-responsive  .table .imgcell {padding:0;}
 .imgcell img{max-height:50px;}
 
+
+.customradio label {padding: 6px 10px;margin:0 0 0 -1px !important; border: 1px solid #428BCA;display: inline-block;font-weight:900;color:#428BCA;}
+.customradio label:first-child {border-radius: 4px 0 0 4px;}
+.customradio label:last-child {border-radius: 0 4px 4px 0;}
+.customradio label:hover{background:rgba(0,0,0,.05)}
+.customradio label input{margin-left:0 !important;margin-right: 5px;}
+
+
+
 /*
  * Main content
  */
@@ -146,6 +157,12 @@ h1,h2,h3 {font-weight:300;}
 /* Set - Lisäyskerrat */
 .setbuttons {margin:5px 0;}
 
+
+/* Settings */
+.itemlist {margin:0;padding:0;}
+.itemlist li {margin:0; list-style: none;  border-bottom: 1px solid rgba(0,0,0,.1); padding:10px;font-size:16px;line-height:20px;clear:both;}
+.itemlist li:hover {background: rgba(0,0,0,.05);}
+.itemlist h3 {margin:0 0 10px;}
 
 /* Footer */
 .sidefooter {position:relative;top:30px;font-size:80%;color:#888;opacity:0.3;transition:all 0.2s; -webkit-transition:all 0.2s;}

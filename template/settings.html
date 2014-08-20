@@ -1,0 +1,63 @@
+	
+<!-- TEMPLATE FOR LISTING PRODUCTS -->
+
+
+
+
+<!-- Pikalisäys-->
+<h1 class="page-header">Kentät (Attribute Sets)</h1>
+
+<div class="row">
+
+	<div style="max-width:600px;">
+		<form ng-submit="save()">
+
+	   		<div class="input-group">
+		      
+	    		<input type="text" class="form-control" ng-model="field.name" />
+			    <span class="input-group-btn">
+			        <button class="btn btn-primary" type="submit">Lisää</button>
+			    </span>
+		    </div>
+
+	 	 </form>
+		
+		<ul class="itemlist"> 
+
+
+<li ng-repeat="(id,field) in fields | orderByPriority | filter:id | orderBy: 'id'"> 
+
+
+	<h3 class="pull-left">{{field.name}}</h3>
+
+	<div class="pull-right">
+		<a href class="btn btn-danger"  ng-click="fields.$remove(field.$id)">
+				<i class="glyphicon glyphicon-remove"></i>
+		</a>
+	</div>
+
+	
+	<div class="clearfix"></div>
+
+
+	<div class="well well-sm">
+		<div class="input-group col-md-4">
+			<form ng-submit="addAttribute(field.$id,attribute.name)">
+			    <input type="text" class="form-control" ng-model="attribute.name" />
+				<span class="input-group-btn">
+					<button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-plus"></i></button>
+				</span>
+			</form>
+		</div>
+		<span class="attribute" ng-repeat="attribute in field.attributes">{{attribute.name}}</span>
+	</div>
+</li>
+
+		</ul>
+
+
+
+	</div>	
+			
+</div>
+

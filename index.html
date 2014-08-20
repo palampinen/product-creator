@@ -10,7 +10,7 @@
 	
     <title>Verkkokauppa × Tuotteet</title>
 	
-	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic,900,700' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic,900,700' rel='stylesheet' type='text/css'>
 	
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,18 +26,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular-resource.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular-route.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular-sanitize.min.js"></script>  
-	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
-	<script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
-	<script src="//cdn.firebase.com/js/simple-login/1.5.0/firebase-simple-login.js"></script>
-	<script src="assets/js/ng-csv.min.js"></script>
-	<script src="assets/js/underscore-min.js"></script>
-	<script src="assets/js/tuotteet.js"></script>
-		
+
   </head>
 
   <body>
@@ -56,7 +45,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Tuotteet</a></li>
-            <li><a href="#">Asetukset</a></li>
+            <li><a href="#/settings">Asetukset</a></li>
             <li><a href="#">Ohje</a></li>
             <li><a class="user" href="#"><span class="userimg"><i class="glyphicon glyphicon-user"></i></span> Kauppias A </a></li>
           </ul>
@@ -86,7 +75,7 @@
 			
 			
 			
-			
+<!-- 		
 			<div class="sidefooter">
 			
 			Made by <a href="http://deeper.fi">Deeper</a>
@@ -97,7 +86,8 @@
 				<a title="Firebase" href="http://firebase.com" target="_blank"><img src="assets/img/tech/firebase.png" alt="Firebase"   /></a>
 			</span>
 			</div>
-			
+-->	
+
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 			<div ng-view></div>
@@ -106,11 +96,29 @@
     </div>
  
 
+
+
+
+    <!-- AngularJS Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular-sanitize.min.js"></script>  
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+    <script src="//cdn.firebase.com/js/simple-login/1.5.0/firebase-simple-login.js"></script>
+    <script src="assets/js/ng-csv.min.js"></script>
+    <script src="assets/js/underscore-min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/services.js"></script>
+    <script src="assets/js/controllers.js"></script>
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+	  <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
     <script src="assets/js/docs.min.js"></script>
   </body>
